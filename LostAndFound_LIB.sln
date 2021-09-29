@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LostAndFound_LIB", "GAC_Lib\LostAndFound_LIB.csproj", "{BC25A72F-A47A-43A2-BAB6-FB625F8C733D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_PZ1", "Test_PZ1\Test_PZ1.csproj", "{271790AE-7C41-44EF-BF8F-088A708687B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_PZ1", "Test_PZ1\Test_PZ1.csproj", "{271790AE-7C41-44EF-BF8F-088A708687B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lost_And_Found_LIB", "Lost_And_Found_LIB\Lost_And_Found_LIB.csproj", "{24E2E4E3-CA47-423D-99CB-B486A7724952}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{271790AE-7C41-44EF-BF8F-088A708687B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{271790AE-7C41-44EF-BF8F-088A708687B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{271790AE-7C41-44EF-BF8F-088A708687B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E2E4E3-CA47-423D-99CB-B486A7724952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E2E4E3-CA47-423D-99CB-B486A7724952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E2E4E3-CA47-423D-99CB-B486A7724952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E2E4E3-CA47-423D-99CB-B486A7724952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

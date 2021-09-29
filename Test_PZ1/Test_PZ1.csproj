@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GAC_Lib\LostAndFound_LIB.csproj" />
+    <ProjectReference Include="..\Lost_And_Found_LIB\Lost_And_Found_LIB.csproj" />
   </ItemGroup>
 
 </Project>

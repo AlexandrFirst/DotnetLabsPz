@@ -2,28 +2,28 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "LostAndFound_LIB/1.0.0": {
+      "Lost_And_Found_LIB/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/LostAndFound_LIB.dll": {}
+          "bin/placeholder/Lost_And_Found_LIB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LostAndFound_LIB.dll": {}
+          "bin/placeholder/Lost_And_Found_LIB.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "LostAndFound_LIB/1.0.0": {
+    "Lost_And_Found_LIB/1.0.0": {
       "type": "project",
-      "path": "../GAC_Lib/LostAndFound_LIB.csproj",
-      "msbuildProject": "../GAC_Lib/LostAndFound_LIB.csproj"
+      "path": "../Lost_And_Found_LIB/Lost_And_Found_LIB.csproj",
+      "msbuildProject": "../Lost_And_Found_LIB/Lost_And_Found_LIB.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "LostAndFound_LIB >= 1.0.0"
+      "Lost_And_Found_LIB >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -63,8 +63,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\DOT_NET\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\DOT_NET\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj"
+            "C:\\Users\\User\\source\\repos\\DOT_NET\\DotnetLabsPz\\Lost_And_Found_LIB\\Lost_And_Found_LIB.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\DOT_NET\\DotnetLabsPz\\Lost_And_Found_LIB\\Lost_And_Found_LIB.csproj"
             }
           }
         }

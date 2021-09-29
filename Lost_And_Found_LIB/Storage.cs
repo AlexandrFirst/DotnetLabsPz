@@ -12,9 +12,9 @@ namespace Lost_And_Found_LIB
         //Сделать делегат по типу GetPersonName для контрвариантности
         //Сделать делегат для презентации ковариантности с конструктором 
         public delegate void Notify(string message);
-        public delegate string GetPersonFullName(Person p);
+        public delegate string GetPersonFullName<T>(T param) where T : Person;
         public event Notify NotifyEvent;
-        public GetPersonFullName GetFullName;
+        public GetPersonFullName<Person> GetFullName;
 
         private List<Obtaining> obtainings;
         private List<Extradiction> extradictions;
