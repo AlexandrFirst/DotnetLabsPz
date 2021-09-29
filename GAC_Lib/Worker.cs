@@ -24,9 +24,10 @@ namespace LostAndFound_LIB
             get => office;
             set => office = value;
         }
-        public ICollection<WorkDay> WorkDays { get; set; }
+        public IList<WorkDay> WorkDays { get; set; }
 
-        public Worker(string Name, string Surname, DateTime Birthday, List<WorkDay> workDays, Office office) : base(Name, Surname, Birthday)
+        public Worker(string Name, string Surname, DateTime Birthday, List<WorkDay> workDays, Office office, int Id) 
+            : base(Name, Surname, Birthday, Id)
         {
             this.WorkDays = workDays;
             this.Office = office;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LostAndFound_LIB;
+using System;
 
 namespace Test_PZ1
 {
@@ -6,7 +7,9 @@ namespace Test_PZ1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Office office = Seeder.Seed();
+            office.printCountOfThingsByKeyWords();
+            Console.ReadKey();
         }
     }
 }

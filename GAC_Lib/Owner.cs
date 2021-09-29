@@ -8,7 +8,7 @@ namespace LostAndFound_LIB
 {
     public class Owner : Person
     {
-        public Owner(string Name, string Surname, DateTime Birthday) : base(Name, Surname, Birthday)
+        public Owner(string Name, string Surname, DateTime Birthday, int Id) : base(Name, Surname, Birthday, Id)
         {
 
         }

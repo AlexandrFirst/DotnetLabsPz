@@ -13,7 +13,7 @@ namespace LostAndFound_LIB
             get => owner;
             set => owner = value;
         }
-        public Extradiction(DateTime actTime, Worker worker, Finding finding, Owner owner) : base(actTime, worker, finding)
+        public Extradiction(DateTime actTime, Worker worker, Finding finding, Owner owner, int Id) : base(actTime, worker, finding, Id)
         {
             this.Owner = owner;
         }

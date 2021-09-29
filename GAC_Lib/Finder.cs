@@ -8,7 +8,7 @@ namespace LostAndFound_LIB
 {
     public class Finder : Person
     {
-        public Finder(string Name, string Surname, DateTime Birthday) : base(Name, Surname, Birthday)
+        public Finder(string Name, string Surname, DateTime Birthday, int Id) : base(Name, Surname, Birthday, Id)
         {
         }
     }

@@ -8,6 +8,13 @@ namespace LostAndFound_LIB
 {
     public abstract class Act
     {
+
+        private int id;
+        public int Id
+        {
+            get => id;
+            set => id = value;
+        }
         private DateTime actTime;
         private Finding finding;
         private Worker worker;
@@ -24,11 +31,12 @@ namespace LostAndFound_LIB
             get => actTime;
             set => actTime = value;
         }
-        public Act(DateTime actTime, Worker worker, Finding finding)
+        public Act(DateTime actTime, Worker worker, Finding finding, int Id)
         {
             this.ActTime = actTime;
             this.Finding = finding;
             this.Worker = worker;
+            this.Id = Id;
         }
     }
 }

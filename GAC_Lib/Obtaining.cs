@@ -14,7 +14,7 @@ namespace LostAndFound_LIB
             get => finder;
             set => finder = value;
         }
-        public Obtaining(DateTime actTime, Worker worker, Finding finding, Finder finder) : base(actTime, worker, finding)
+        public Obtaining(DateTime actTime, Worker worker, Finding finding, Finder finder, int Id) : base(actTime, worker, finding, Id)
         {
             this.Finder = finder;
         }
