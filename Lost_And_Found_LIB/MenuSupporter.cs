@@ -31,6 +31,9 @@ namespace Lost_And_Found_LIB
                     case '2':
                         MyActions.ExtradictAction(office);
                         break;
+                    case '3':
+                        MyActions.DisplayAllExtradictions(office);
+                        break;
                     case '4':
                         MyActions.DisplayAllObtainings(office);
                         break;

@@ -35,5 +35,18 @@ namespace Lost_And_Found_LIB
                                                     GetPersonFullName(obtainedThing.Worker).FitWithLength());
             }
         }
+        public static void DisplayAllExtradictions(Office office)
+        {
+            Console.WriteLine("Things extradicted: ");
+            Console.WriteLine("        Time        |         Owner      |       Finding      |        Worker       ");
+            Console.WriteLine("--------------------------------------------------------------------------------------");
+            foreach (var obtainedThing in office.Storage.Extradictions)
+            {
+                Console.WriteLine("{0}|{1}|{2}|{3}", obtainedThing.ActTime.TimeOfDay.ToString().FitWithLength(),
+                                                    GetPersonFullName(obtainedThing.Owner).FitWithLength(),
+                                                    obtainedThing.Finding.Name.FitWithLength(),
+                                                    GetPersonFullName(obtainedThing.Worker).FitWithLength());
+            }
+        }
     }
 }
