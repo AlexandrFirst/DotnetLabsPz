@@ -11,6 +11,12 @@ namespace Lost_And_Found_LIB
         private MyStorage myStorage;
         private Storage storage;
         private Notifications notifications;
+        private MenuSupporter menuSupporter;
+        public MenuSupporter MenuSupporter
+        {
+            get => menuSupporter;
+            set => menuSupporter = value;
+        }
         public Notifications Notifications
         {
             get => notifications;
@@ -30,6 +36,7 @@ namespace Lost_And_Found_LIB
         {
             storage = new Storage();
             notifications = new Notifications();
+            menuSupporter = new MenuSupporter(this);
             //Worker worker = new Worker("Oleksii", "Selevych1", new DateTime(2002, 04, 19), 1);
             //Finding finding = new Finding("Some desctiption", "IPhone22", 1);
             //Finder finder = new Finder("Oleksandr", "Logvinov", new DateTime(2002, 6, 12), 1);
@@ -37,7 +44,7 @@ namespace Lost_And_Found_LIB
             storage.GetFullName = MyActions.GetPersonFullName;
             //storage.Obtain(DateTime.Now, worker, finding, finder);
             myStorage = new MyStorage();
-            MenuSupporter.DrawMenu(this);
+            menuSupporter.DrawMenu();
         }
     }
 }

@@ -8,13 +8,10 @@ namespace Lost_And_Found_LIB
 {
     public class Storage
     {
-        // Могу использовать делегат для Obtaining и для 
-        //Сделать делегат по типу GetPersonName для контрвариантности
-        //Сделать делегат для презентации ковариантности с конструктором 
         public delegate void Notify(string message);
-        public delegate string GetPersonFullName<T>(T param) where T : Person;
+        public delegate string GetPersonFullName(Person person);
         public event Notify NotifyEvent;
-        public GetPersonFullName<Person> GetFullName;
+        public GetPersonFullName GetFullName;
 
         private List<Obtaining> obtainings;
         private List<Extradiction> extradictions;
@@ -56,7 +53,7 @@ namespace Lost_And_Found_LIB
                 Extradiction extradiction = new Extradiction(actTime, worker, finding, owner);
                 extradictions.Add(extradiction);
                 NotifyEvent?.Invoke($"The {finding.Name} was given to owner : {GetFullName?.Invoke(owner)} at {actTime.TimeOfDay}" +
-                    $"by {GetFullName(worker)}");
+                    $" by {GetFullName(worker)}");
                 if (GetFullName.Target == null)
                     Console.WriteLine("The static method was invoked");
             }
