@@ -8,6 +8,14 @@ namespace Lost_And_Found_LIB
 {
     public class Notifications
     {
-        public static void ShowMessage(string message) => Console.WriteLine(message);
+        public void TextMessage(string message) => Console.WriteLine(message);
+
+        public void ColourfulMessage(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+        public void CapsMesssage(string message) => Console.WriteLine(message.ToUpper());
     }
 }

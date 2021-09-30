@@ -55,7 +55,7 @@ namespace LostAndFound_LIB
         public void printCountOfThingsByKeyWords()
         {
             List<string> keywords = Obtainings.SelectMany(o => o.Finding.KeyWords).Distinct().ToList();
-            var thingsByKeywordsCount = Obtainings.GroupJoin()
+            //var thingsByKeywordsCount = Obtainings.GroupJoin();
         }
         
         public void PrintObtainigsInfo()
