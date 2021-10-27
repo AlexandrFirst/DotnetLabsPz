@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace IRepositorySampleConsoleLab1_DotNet.Core.Repositories
 {
-    public interface IWorkerRepository : IRepository<Worker>
+    public interface IKeywordRepository : IRepository<Keyword>
     {
-        int GetNumberOfPerformedActions(Worker worker);
-
-
+        int getNumberOfItemsWithKeyword(Keyword keyword);
 
     }
 }

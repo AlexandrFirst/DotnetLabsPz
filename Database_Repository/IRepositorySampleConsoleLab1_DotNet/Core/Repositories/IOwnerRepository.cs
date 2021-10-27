@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace IRepositorySampleConsoleLab1_DotNet.Core.Repositories
 {
-    public interface IWorkerRepository : IRepository<Worker>
+    public interface IOwnerRepository : IRepository<Owner>
     {
-        int GetNumberOfPerformedActions(Worker worker);
+
 
 
 

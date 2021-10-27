@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace IRepositorySampleConsoleLab1_DotNet.Core.Repositories
 {
-    public interface IWorkerRepository : IRepository<Worker>
+    public interface IExtradictionRepository : IRepository<Extradiction>
     {
-        int GetNumberOfPerformedActions(Worker worker);
-
-
-
+        IEnumerable<Extradiction> getExtradictionsByDate(string year = null, string month = null, string day = null);
     }
 }

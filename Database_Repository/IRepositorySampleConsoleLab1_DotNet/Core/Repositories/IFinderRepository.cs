@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace IRepositorySampleConsoleLab1_DotNet.Core.Repositories
 {
-    public interface IWorkerRepository : IRepository<Worker>
+    public interface IFinderRepository : IRepository<Finder>
     {
-        int GetNumberOfPerformedActions(Worker worker);
-
-
-
+        IEnumerable<Finder> GetFindersByNumberOfObtainings(int obtainingsNumber);
     }
 }

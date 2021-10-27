@@ -53,13 +53,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Domain\Person.cs" />
+    <Compile Include="Core\Domain\Extradiction.cs" />
+    <Compile Include="Core\Domain\Finder.cs" />
+    <Compile Include="Core\Domain\Finding.cs" />
+    <Compile Include="Core\Domain\KeyWord.cs" />
+    <Compile Include="Core\Domain\Obtaining.cs" />
+    <Compile Include="Core\Domain\Owner.cs" />
     <Compile Include="Core\Domain\RepositoryContext.cs" />
     <Compile Include="Core\Domain\Worker.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IExtradictionRepository.cs" />
+    <Compile Include="Core\Repositories\IFinderRepository.cs" />
+    <Compile Include="Core\Repositories\IFindingRepository.cs" />
+    <Compile Include="Core\Repositories\IKeywordRepository.cs" />
+    <Compile Include="Core\Repositories\IObtainingRepository.cs" />
+    <Compile Include="Core\Repositories\IOwnerRepository.cs" />
     <Compile Include="Core\Repositories\IRepository.cs" />
     <Compile Include="Core\Repositories\IWorkerRepository.cs" />
+    <Compile Include="Persistence\Repositories\ExtradictionRepository.cs" />
+    <Compile Include="Persistence\Repositories\FindersRepository.cs" />
+    <Compile Include="Persistence\Repositories\FindingsRepository.cs" />
+    <Compile Include="Persistence\Repositories\KeywordsRepository.cs" />
+    <Compile Include="Persistence\Repositories\ObtainingRepository.cs" />
+    <Compile Include="Persistence\Repositories\OwnersRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="Persistence\Repositories\WorkersRepository.cs" />
+    <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

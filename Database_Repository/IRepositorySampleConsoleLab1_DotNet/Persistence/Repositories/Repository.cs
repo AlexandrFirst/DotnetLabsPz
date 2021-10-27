@@ -20,7 +20,7 @@ namespace IRepositorySampleConsoleLab1_DotNet.Persistence.Repositories
             this.context = context;
             this.tableName = tableName;
         }
-        public int Add(TEntity entity)
+        public virtual int Add(TEntity entity)
         {
             List<PropertyInfo> properties = typeof(TEntity).GetProperties().ToList();
             string sqlString = "INSERT INTO " + tableName + " (";
@@ -38,19 +38,14 @@ namespace IRepositorySampleConsoleLab1_DotNet.Persistence.Repositories
         }
         public int Remove(TEntity entity)
         {
-            List<PropertyInfo> properties = typeof(TEntity).GetProperties().ToList();
-            List<PropertyInfo> identifierProperties = new List<PropertyInfo>();
-            foreach (var prop in properties)
-                if (prop.CustomAttributes.Count() != 0)
-                    identifierProperties.Add(prop);
-            
+            List<PropertyInfo> identifierProperties = getIdentifierProperties(typeof(TEntity));
             string sqlString = "DELETE FROM " + tableName + " WHERE ";
 
             for(int i = 0;i < identifierProperties.Count(); i++)
             {
                 sqlString += identifierProperties[i].Name + " = " + identifierProperties[i].GetValue(entity, null);
                 if (identifierProperties.Count - 1 != i)
-                    sqlString += "AND";
+                    sqlString += " AND ";
             }
             return context.Database.ExecuteSqlCommand(sqlString);
         }
@@ -93,6 +88,34 @@ namespace IRepositorySampleConsoleLab1_DotNet.Persistence.Repositories
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate) => 
             GetAll().AsQueryable().Where(predicate);
+
+
+        private List<PropertyInfo> getIdentifierProperties(Type entityType)
+        {
+            List<PropertyInfo> properties = entityType.GetProperties().ToList();
+            List<PropertyInfo> identifierProperties = new List<PropertyInfo>();
+            foreach (var prop in properties)
+                if (prop.CustomAttributes.Count() != 0)
+                    identifierProperties.Add(prop);
+            return identifierProperties;
+        }
+
+
+        public int AddComposite(TEntity entity)
+        {
+            List<PropertyInfo> properties = typeof(TEntity).GetProperties().ToList();
+            string sqlString = "INSERT INTO " + tableName + " (";
+            foreach (PropertyInfo prop in properties)
+                sqlString += prop.Name + ",";
+            sqlString = sqlString.Remove(sqlString.Length - 1, 1);
+            sqlString += ") VALUES (";
+            foreach (PropertyInfo prop in properties)
+                sqlString += "'" + prop.GetValue(entity, null) + "',";
+            sqlString = sqlString.Remove(sqlString.Length - 1, 1);
+            sqlString += ");";
+
+            return context.Database.ExecuteSqlCommand(sqlString);
+        }
     }
 
 }

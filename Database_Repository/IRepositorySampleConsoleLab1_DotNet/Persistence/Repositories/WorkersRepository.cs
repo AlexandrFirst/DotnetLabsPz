@@ -13,11 +13,12 @@ namespace IRepositorySampleConsoleLab1_DotNet.Persistence.Repositories
     {
         public WorkersRepository(DbContext context, string tableName) : base(context, tableName)
         {
+        }
 
-
-
-
-
+        public int GetNumberOfPerformedActions(Worker worker)
+        {
+            string sqlString = " SELECT dbo.getNumberOfWorkerActions(" + worker.WorkerId + ")";
+            return context.Database.SqlQuery<int>(sqlString).FirstOrDefault();
         }
     }
 }

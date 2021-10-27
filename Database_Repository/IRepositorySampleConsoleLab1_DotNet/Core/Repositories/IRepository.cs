@@ -17,6 +17,8 @@ namespace IRepositorySampleConsoleLab1_DotNet
         IEnumerable<TEntity> GetAll();
         TEntity Get(int id);
 
+        int AddComposite(TEntity entity);
+
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
     }
 }

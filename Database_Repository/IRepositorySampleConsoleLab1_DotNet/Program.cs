@@ -1,4 +1,5 @@
 ﻿using IRepositorySampleConsoleLab1_DotNet.Core.Domain;
+using IRepositorySampleConsoleLab1_DotNet.Persistence;
 using IRepositorySampleConsoleLab1_DotNet.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,18 +13,22 @@ namespace IRepositorySampleConsoleLab1_DotNet
     {
         static void Main(string[] args)
         {
-            //Worker worker = new Worker()
-            //{
-            //    Name = "Sasha",
-            //    Surname = "Krivoshapko",
-            //    Birthday = "2000-04-13"
-            //};
-            RepositoryContext context = new RepositoryContext();
-            WorkersRepository workersRepository = new WorkersRepository(context, "Workers");
-            IEnumerable<Worker> findResult = workersRepository.Find(w => w.Name.Contains("1"));
-            foreach(Worker w in findResult)
-            Console.WriteLine(w.Name + " " + w.Surname);
-            //workersRepository.Add(worker);
+            using (UnitOfWork unitOfWork = new UnitOfWork(new RepositoryContext()))
+            {
+                //List<Keyword> keywords = unitOfWork.Findings.getAllKeywords(new Finding { FindingId = 2 }).ToList();
+                //foreach(var keyWord in keywords)
+                //{
+                //    Console.WriteLine(keyWord.Word);
+                //}
+                //int numberOfActions = unitOfWork.Workers.GetNumberOfPerformedActions(new Worker { WorkerId = 1 });
+                //Console.WriteLine(numberOfActions);
+
+                IEnumerable<Finder> finders = unitOfWork.Finders.GetFindersByNumberOfObtainings(1);
+                foreach(var finder in finders)
+                    Console.WriteLine(finder.Name + " " + finder.Surname);
+
+
+            }
         }
     }
 }
