@@ -8,13 +8,19 @@
     ".NETCoreApp,Version=v5.0": {
       "Test_PZ1/1.0.0": {
         "dependencies": {
-          "Lost_And_Found_LIB": "1.0.0"
+          "LostAndFound_LIB": "1.0.0",
+          "Lost_And_Found_LIB": "5.1.0"
         },
         "runtime": {
           "Test_PZ1.dll": {}
         }
       },
-      "Lost_And_Found_LIB/1.0.0": {
+      "LostAndFound_LIB/1.0.0": {
+        "runtime": {
+          "LostAndFound_LIB.dll": {}
+        }
+      },
+      "Lost_And_Found_LIB/5.1.0": {
         "runtime": {
           "Lost_And_Found_LIB.dll": {}
         }
@@ -27,7 +33,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Lost_And_Found_LIB/1.0.0": {
+    "LostAndFound_LIB/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lost_And_Found_LIB/5.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

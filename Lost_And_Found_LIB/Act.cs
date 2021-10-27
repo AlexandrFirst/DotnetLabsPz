@@ -13,8 +13,8 @@ namespace Lost_And_Found_LIB
         private Worker worker;
         public Worker Worker
         {
-            get => worker;
             set => worker = value;
+            get => worker;
         }
         public Finding Finding
         {

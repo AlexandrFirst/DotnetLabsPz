@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Lost_And_Found_LIB/1.0.0": {
+      "Lost_And_Found_LIB/5.1.0.0": {
         "runtime": {
           "Lost_And_Found_LIB.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "Lost_And_Found_LIB/1.0.0": {
+    "Lost_And_Found_LIB/5.1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
