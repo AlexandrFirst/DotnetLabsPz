@@ -1,0 +1,12 @@
+﻿DELETE FROM Obtainings
+DELETE FROM Extradictions
+DELETE FROM FindingsKeywords
+DELETE FROM Findings
+DELETE FROM Keywords
+DELETE FROM Owners
+DELETE FROM Finders
+DELETE FROM Workers
+
+
+
+

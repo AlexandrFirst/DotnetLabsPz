@@ -1,0 +1,112 @@
+﻿USE LAB1_FINAL
+
+CREATE TABLE Finders(
+	FinderId INT NOT NULL IDENTITY(1,1),
+	Name NVARCHAR(50) NOT NULL,
+	Surname NVARCHAR(50) NOT NULL,
+	Birthday VARCHAR(11)
+);
+
+ALTER TABLE Finders
+ADD CONSTRAINT PK_FinderId PRIMARY KEY (FinderId)
+
+
+CREATE TABLE Workers(
+	WorkerId INT NOT NULL IDENTITY(1, 1),
+	Name NVARCHAR(50) NOT NULL,
+	Surname NVARCHAR(50) NOT NULL,
+	Birthday VARCHAR(11)
+);
+
+ALTER TABLE Workers
+ADD CONSTRAINT PK_WorkerId PRIMARY KEY (WorkerId)
+
+
+CREATE TABLE Owners(
+	OwnerId INT NOT NULL IDENTITY(1, 1),
+	Name NVARCHAR(50) NOT NULL,
+	Surname NVARCHAR(50) NOT NULL,
+	Birthday VARCHAR(11)
+);
+
+ALTER TABLE Owners
+ADD CONSTRAINT PK_OwnerId PRIMARY KEY (OwnerId)
+
+
+CREATE TABLE Findings(
+	FindingId INT NOT NULL IDENTITY(1,1),
+	Name NVARCHAR(50) NOT NULL,
+	Description NVARCHAR(100) NOT NULL
+);
+
+ALTER TABLE Findings
+	ADD CONSTRAINT PK_FindingId PRIMARY KEY (FindingId);
+
+
+CREATE TABLE Keywords(
+	KeywordId INT NOT NULL IDENTITY(1,1),
+	Word NVARCHAR(20) NOT NULL
+)
+ALTER TABLE Keywords
+	ADD CONSTRAINT PK_KeywordId PRIMARY KEY(KeywordId) 
+
+
+CREATE TABLE FindingsKeywords(
+	FindingId INT NOT NULL,
+	KeywordId INT NOT NULL
+)
+
+ALTER TABLE FindingsKeywords
+	ADD CONSTRAINT PK_FindingId_KeywordId PRIMARY KEY(FindingId, KeywordId);
+
+ALTER TABLE FindingsKeywords
+	ADD CONSTRAINT FK_FindingsKeywords_Keywords FOREIGN KEY (KeywordId) REFERENCES Keywords(KeywordId)
+
+ALTER TABLE FindingsKeywords
+	ADD CONSTRAINT FK_FindingsKeywords_Findings FOREIGN KEY (FindingId) REFERENCES Findings(FindingId)
+
+
+
+CREATE TABLE Extradictions(
+	FindingId INT NOT NULL,
+	OwnerId INT NOT NULL,
+	WorkerId INT NOT NULL,
+	ActTime VARCHAR(11)
+);
+
+ALTER TABLE Extradictions
+	ADD CONSTRAINT PK_FindingId_OwnerId_WorkderId PRIMARY KEY(FindingId, OwnerId, WorkerId);
+
+ALTER TABLE Extradictions
+	ADD CONSTRAINT FK_Extradictions_Findings FOREIGN KEY(FindingId) REFERENCES Findings(FindingId);
+
+
+ALTER TABLE Extradictions
+	ADD CONSTRAINT FK_Extradictionss_Owners FOREIGN KEY(OwnerId) REFERENCES Owners(OwnerId);
+
+
+ALTER TABLE Extradictions
+	ADD CONSTRAINT FK_Extradictions_Workers FOREIGN KEY(WorkerId) REFERENCES Workers(WorkerId);
+
+
+CREATE TABLE Obtainings(
+	FindingId INT NOT NULL,
+	FinderId INT NOT NULL,
+	WorkerId INT NOT NULL,
+	ActTime VARCHAR(11)
+);
+
+ALTER TABLE Obtainings
+	ADD CONSTRAINT PK_FindingId_FinderId_WorkderId PRIMARY KEY(FindingId, FinderId, WorkerId);
+
+ALTER TABLE Obtainings
+	ADD CONSTRAINT FK_Obtainings_Findings FOREIGN KEY(FindingId) REFERENCES Findings(FindingId);
+
+
+ALTER TABLE Obtainings
+	ADD CONSTRAINT FK_Obtainings_Finders FOREIGN KEY(FinderId) REFERENCES Finders(FinderId);
+
+
+ALTER TABLE Obtainings
+	ADD CONSTRAINT FK_Obtainings_Workers FOREIGN KEY(WorkerId) REFERENCES Workers(WorkerId);
+

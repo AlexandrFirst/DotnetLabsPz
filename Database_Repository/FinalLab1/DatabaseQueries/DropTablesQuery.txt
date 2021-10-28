@@ -1,0 +1,10 @@
+﻿
+DROP TABLE Obtainings
+DROP TABLE Extradictions
+DROP TABLE FindingsKeywords
+DROP TABLE Keywords
+DROP TABLE Findings
+DROP TABLE Finders
+DROP TABLE Workers
+DROP TABLE Owners
+

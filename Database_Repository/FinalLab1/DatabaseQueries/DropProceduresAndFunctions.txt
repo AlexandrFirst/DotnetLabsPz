@@ -1,0 +1,8 @@
+﻿DROP PROCEDURE get
+DROP PROCEDURE getActionByDate
+DROP PROCEDURE getALL
+DROP PROCEDURE getAllKeywordsByFinding
+DROP PROCEDURE insertIntoExtradictions
+DROP PROCEDURE insertIntoObtainings
+DROP FUNCTION dbo.getNumberOfWorkerActions
+DROP FUNCTION dbo.getPeopleWhoBroughtMoreThanOneItem
