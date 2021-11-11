@@ -2,16 +2,6 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "LostAndFound_LIB/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/LostAndFound_LIB.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/LostAndFound_LIB.dll": {}
-        }
-      },
       "Lost_And_Found_LIB/5.1.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -25,11 +15,6 @@
     }
   },
   "libraries": {
-    "LostAndFound_LIB/1.0.0": {
-      "type": "project",
-      "path": "../GAC_Lib/LostAndFound_LIB.csproj",
-      "msbuildProject": "../GAC_Lib/LostAndFound_LIB.csproj"
-    },
     "Lost_And_Found_LIB/5.1.0": {
       "type": "project",
       "path": "../Lost_And_Found_LIB/Lost_And_Found_LIB.csproj",
@@ -38,12 +23,12 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "LostAndFound_LIB >= 1.0.0",
+      "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj",
       "Lost_And_Found_LIB >= 5.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\Alex\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
@@ -51,11 +36,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\Test_PZ1\\Test_PZ1.csproj",
+      "projectUniqueName": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\Test_PZ1\\Test_PZ1.csproj",
       "projectName": "Test_PZ1",
-      "projectPath": "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\Test_PZ1\\Test_PZ1.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\Test_PZ1\\obj\\",
+      "projectPath": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\Test_PZ1\\Test_PZ1.csproj",
+      "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
+      "outputPath": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\Test_PZ1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -63,7 +48,7 @@
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -79,11 +64,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\GAC_Lib\\LostAndFound_LIB.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\GAC_Lib\\LostAndFound_LIB.csproj"
+            "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj": {
+              "projectPath": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj"
             },
-            "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\Lost_And_Found_LIB\\Lost_And_Found_LIB.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\Lost_And_Found_LIB\\Lost_And_Found_LIB.csproj"
+            "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\Lost_And_Found_LIB\\Lost_And_Found_LIB.csproj": {
+              "projectPath": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\Lost_And_Found_LIB\\Lost_And_Found_LIB.csproj"
             }
           }
         }
@@ -112,8 +97,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

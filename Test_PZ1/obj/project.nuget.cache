@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "rcxKRmB+fEqU+YpYMz2pXDTbBKYch/VnOo70yFidhD8iCutxcCYJKJ7qWSZO7fdP6kY6Apm1v9NgXLeET2TTDw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\User\\Desktop\\DOT.NET_TASKS\\Test_PZ1\\Test_PZ1.csproj",
+  "dgSpecHash": "f1DcL2DOkG4JeSTxaej7ZpFHiaqKIKzM9WQP3FrF27dF8oJpeNg9/AO5m5Pp06AoXXkrPgWHJkXgZY3Y/UZUZA==",
+  "success": false,
+  "projectFilePath": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\Test_PZ1\\Test_PZ1.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\nure\\Dotnet\\dotnet lab\\DotnetLabsPz\\GAC_Lib\\LostAndFound_LIB.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
