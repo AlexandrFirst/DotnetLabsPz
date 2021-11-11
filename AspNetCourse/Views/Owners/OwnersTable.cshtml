@@ -1,0 +1,31 @@
+﻿@model System.Collections.Generic.IEnumerable<AspNetCourse.Core.Domain.Owner>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Owner identifier</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Date Of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var owner in Model)
+        {
+            <tr>
+                <th scope="row">@owner.OwnerId</th>
+                <td>@owner.Name</td>
+                <td>@owner.Surname</td>
+                <td>@owner.Birthday</td>
+                <td>@Html.ActionLink("Edit", "Edit", "Owners", new { id = owner.OwnerId }, null)</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Create new Owner", "Edit", "Owners")

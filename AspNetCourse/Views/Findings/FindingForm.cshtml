@@ -1,0 +1,23 @@
+﻿@model AspNetCourse.Core.Domain.Finding
+
+
+@{ 
+    string buttonLabel = Model == null ? "Create" : "Update";
+}
+
+@using (Html.BeginForm("Update", "Findings"))
+{
+
+    @Html.HiddenFor(f => f.FindingId)
+    <div class="form-group">
+        @Html.LabelFor(f => f.Name)
+        @Html.TextBoxFor(f => f.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(f => f.Description)
+        @Html.TextAreaFor(f => f.Description, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">@buttonLabel</button>
+}
+
+

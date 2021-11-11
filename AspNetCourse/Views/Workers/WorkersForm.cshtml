@@ -1,0 +1,29 @@
+﻿@model AspNetCourse.Core.Domain.Worker
+
+@{
+    string buttonLabel = Model == null ? "Create" : "Update";
+}
+<div class="d-flex justify-content-center align-items-center container ">
+
+    <div class="row ">
+
+        @using (Html.BeginForm("Update", "Workers"))
+        {
+            @Html.HiddenFor(w => w.WorkerId);
+            <div class="form-group">
+                @Html.LabelFor(w => w.Name)
+                @Html.TextBoxFor(w => w.Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(w => w.Surname)
+                @Html.TextBoxFor(w => w.Surname, new { @class = "form-control" })
+            </div>
+            <div class="form-group ju">
+                @Html.LabelFor(w => w.Birthday)
+                @Html.TextBoxFor(w => w.Birthday, new { @class = "form-control" })
+            </div>
+            <button type="submit">@buttonLabel</button>
+        }
+    </div>
+
+</div>

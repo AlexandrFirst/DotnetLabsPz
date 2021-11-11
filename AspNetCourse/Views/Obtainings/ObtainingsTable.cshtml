@@ -1,0 +1,30 @@
+﻿@model System.Collections.Generic.IEnumerable<AspNetCourse.Core.DTO_s.ObtainingDTO>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Worker</th>
+            <th scope="col">Finding</th>
+            <th scope="col">Finder</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obtaining in Model)
+        {
+        <tr>
+            <td>@obtaining.Worker</td>
+            <td>@obtaining.Finding</td>
+            <td>@obtaining.Finder</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "Obtainings", 
+               new { @WorkerId = obtaining.WorkerId, @FinderId = obtaining.FinderId, @FindingId = obtaining.FindingId}, new { @class = "delete"})
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Create new Obtaining", "getForm", "Obtainings")

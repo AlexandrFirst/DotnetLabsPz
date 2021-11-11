@@ -1,0 +1,24 @@
+﻿@model AspNetCourse.Core.Domain.Finder
+
+
+
+<div class="container">
+    @using (Html.BeginForm("Update", "Finders"))
+    {
+        @Html.HiddenFor(f => f.FinderId)
+        <div class="form-group">
+            @Html.LabelFor(f => f.Name)
+            @Html.TextBoxFor(f => f.Name, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(f => f.Surname)
+            @Html.TextBoxFor(f => f.Surname, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(f => f.Birthday)
+            @Html.TextBoxFor(f => f.Birthday, new { @class = "form-control" })
+        </div>
+        <button class="btn" type="submit"></button>
+    }
+</div>
+

@@ -1,0 +1,31 @@
+﻿@model System.Collections.Generic.List<AspNetCourse.Core.Domain.Finder>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Finder identifier</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Date Of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var finder in Model)
+        {
+        <tr>
+            <th scope="row">@finder.FinderId</th>
+            <td>@finder.Name</td>
+            <td>@finder.Surname</td>
+            <td>@finder.Birthday</td>
+            <td>@Html.ActionLink("Edit", "Edit", "Finders", new { id = finder.FinderId }, null)</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", "Finders", new { id = finder.FinderId }, new { @class = "delete", @id = finder.FinderId })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+    @Html.ActionLink("Add new Finder", "Edit", "Finders")
+
+

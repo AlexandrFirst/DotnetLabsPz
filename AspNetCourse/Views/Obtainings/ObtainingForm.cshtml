@@ -1,0 +1,30 @@
+﻿@model AspNetCourse.ViewModels.ObtainingViewModel
+
+
+
+<div class="d-flex justify-content-center align-items-center container ">
+    <h2>Adding an Obtaining</h2>
+    <div class="row ">
+
+        @using (Html.BeginForm("Create", "Obtainings"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Obtaining.Finder);
+                @Html.DropDownListFor(m => m.Obtaining.Finder, new SelectList(Model.Finders), "Select a finder")
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Obtaining.Worker);
+                @Html.DropDownListFor(m => m.Obtaining.Worker, new SelectList(Model.Workers), "Select a worker")
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Obtaining.Finding);
+                @Html.DropDownListFor(m => m.Obtaining.Finding, new SelectList(Model.Findings), "Select a finding")
+            </div>
+            <button class="btn btn-primary" type="submit">Create</button>
+        }
+    </div>
+</div>
+
+
+
+
