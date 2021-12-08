@@ -1,0 +1,30 @@
+﻿@using Lab_4_Dot_Net.Core.Domain.Statistics;
+@model IEnumerable<Loser>
+
+@{
+    ViewBag.Title = "LosersTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-6 container">
+    <h2 class="text-center">Top people who have lost items:</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Owner</th>
+                <th>Number of lost items</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var loser in Model)
+            {
+            <tr>
+                <td>@loser.OwnerName</td>
+                <td>@loser.NumberOfLostItems</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

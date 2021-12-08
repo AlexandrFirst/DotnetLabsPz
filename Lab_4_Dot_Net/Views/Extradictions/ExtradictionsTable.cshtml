@@ -1,0 +1,47 @@
+﻿@using Lab_4_Dot_Net.Core.DTO;
+@model IEnumerable<ExtradictionTableDTO>
+
+@{
+    ViewBag.Title = "ExtradictionsTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="m-6 container">
+    <h2 class="text-center">Extradictions</h2>
+    @Html.Partial("Alert")
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Worker</th>
+                <th>Owner</th>
+                <th>Finding</th>
+                <th>Added on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var extradiction in Model)
+            {
+                <tr>
+                    <td>@extradiction.WorkerName</td>
+                    <td>@extradiction.OwnerName</td>
+                    <td>@extradiction.FindingName</td>
+                    <td>@extradiction.AddedOn</td>
+                    <td>
+                        <button onclick="openModal(this)" class="btn btn-primary btn-sm bg-danger" data-workerid="@extradiction.WorkerId"
+                                data-findingid="@extradiction.FindingId"
+                                data-finderid="@extradiction.OwnerId"
+                                data-ownername="@extradiction.OwnerName"
+                                data-findingname="@extradiction.FindingName">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="m-4">
+    <a href="Extradictions/Add" class="btn btn-primary">Create new extradiction</a>
+</div>
+<script src="~/Content/Js/Extradictions/ExtradictionModal.js"></script>

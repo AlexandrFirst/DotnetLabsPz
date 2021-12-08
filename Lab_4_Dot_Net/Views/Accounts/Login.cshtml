@@ -1,0 +1,31 @@
+﻿@model Lab_4_Dot_Net.Core.DTO.LoginDTO
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="m-4 container">
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Accounts"))
+    {
+        <div class="row md-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Login)
+                @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = "Login" })
+                @Html.ValidationMessageFor(m => m.Login, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Passsword)
+                @Html.TextBoxFor(m => m.Passsword, new { @class = "form-control", placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.Passsword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    }
+</div>

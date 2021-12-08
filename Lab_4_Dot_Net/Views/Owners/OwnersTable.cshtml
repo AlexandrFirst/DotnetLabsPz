@@ -1,0 +1,44 @@
+﻿@using Lab_4_Dot_Net.Core.Domain.Owners;
+@model IEnumerable<OwnerAudit>
+
+@{
+    ViewBag.Title = "OwnersTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-6 container">
+    <h2 class="text-center">Owners</h2>
+    @Html.Partial("Alert")
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Birthday</th>
+                <th>Added on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var owner in Model)
+            {
+                <tr>
+                    <td>@owner.Name</td>
+                    <td>@owner.Surname</td>
+                    <td>@owner.Birthday</td>
+                    <td>@owner.MadeAt</td>
+                    <td>
+                        <a href="Owners/Edit/?id=@owner.OwnerId" class="btn btn-primary btn-sm bg-success" tabindex="-1" role="button">Edit</a>
+                        <button onclick="openModal(this)" class="btn btn-primary btn-sm bg-danger" data-id="@owner.OwnerId"
+                                data-name="@owner.Name" data-surname="@owner.Surname">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="m-4">
+    <a href="Owners/Edit" class="btn btn-primary">Create new owner</a>
+</div>
+<script src="~/Content/Js/Owners/OwnerModal.js"></script>

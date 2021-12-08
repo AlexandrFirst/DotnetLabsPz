@@ -1,0 +1,38 @@
+﻿@model Lab3_Dot_Net.Core.DTO.ExtradictionFormDTO
+
+@{
+    ViewBag.Title = "ExtradictionForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-4 container">
+    <h2>Adding an extradcton</h2>
+    @using (Html.BeginForm("Add", "Extradictions")) 
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row mb-2">
+            <div class="col-md-4">
+                @Html.LabelFor(e => e.OwnerName)
+                @Html.DropDownListFor(e => e.OwnerName, new SelectList(Model.OwnersNames), "Select an owner", new { @class = "form-control form-select" })
+                @Html.ValidationMessageFor(e => e.OwnerName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-8 pt-5">
+                <a href="AddNewObtaining" class="btn btn-primary bg-success" tabindex="-1" role="button">Add new obtaining</a>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-4">
+                @Html.LabelFor(e => e.FindingName)
+                @Html.DropDownListFor(e => e.FindingName, new SelectList(Model.FindingsNames), "Select a finding", new { @class = "form-control form-select" })
+                @Html.ValidationMessageFor(e => e.FindingName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-8 pt-5">
+                <a href="AddNewFinding" class="btn btn-primary  bg-success" tabindex="-1" role="button">Add new finding</a>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    }
+</div>
+

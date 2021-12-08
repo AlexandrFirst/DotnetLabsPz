@@ -1,0 +1,47 @@
+﻿@using Lab_4_Dot_Net.Core.DTO;
+
+@model IEnumerable<ObtainingTableDTO>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-6 container">
+    <h2 class="text-center">Obtainings</h2>
+    @Html.Partial("Alert")
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Worker</th>
+                <th>Finder</th>
+                <th>Finding</th>
+                <th>Added on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obtaining in Model)
+            {
+                <tr>
+                    <td>@obtaining.WorkerName</td>
+                    <td>@obtaining.FinderName</td>
+                    <td>@obtaining.FindingName</td>
+                    <td>@obtaining.AddedOn</td>
+                    <td>
+                        <button onclick="openModal(this)" class="btn btn-primary btn-sm bg-danger" data-workerid="@obtaining.WorkerId"
+                                data-findingid="@obtaining.FindingId"
+                                data-finderid="@obtaining.FinderId"
+                                data-findername="@obtaining.FinderName"
+                                data-findingname="@obtaining.FindingName">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="m-4">
+    <a href="Obtainings/Add" class="btn btn-primary">Create new obtaining</a>
+</div>
+<script src="~/Content/Js/Obtainings/ObtainingModal.js"></script>

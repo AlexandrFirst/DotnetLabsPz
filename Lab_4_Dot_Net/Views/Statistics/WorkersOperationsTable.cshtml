@@ -1,0 +1,31 @@
+﻿@using Lab_4_Dot_Net.Core.Domain.Statistics;
+
+@model IEnumerable<OperationPerWoker>
+
+@{
+    ViewBag.Title = "WorkersOperationsTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-6 container">
+    <h2 class="text-center">Workers and their performed actions</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Worker</th>
+                <th>Extradictions count</th>
+                <th>Obtainings count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var operation in Model)
+            {
+                <tr>
+                    <td>@operation.WorkerName</td>
+                    <td>@operation.ExtradictionsCount</td>
+                    <td>@operation.ObtainingsCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

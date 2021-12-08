@@ -1,0 +1,61 @@
+﻿@model Lab_4_Dot_Net.Core.DTO.WorkerFormDTO
+
+@{
+    ViewBag.Title = "WorkerForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-4 container">
+    <h2>Login</h2>
+    @using (Html.BeginForm("Update", "Workers"))
+    {
+        @Html.HiddenFor(w => w.WorkerId);
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="row md-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Login)
+                @Html.TextBoxFor(m => m.Login, new { @class = "form-control", placeholder = "Login" })
+                @Html.ValidationMessageFor(m => m.Login, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Password)
+                @Html.TextBoxFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Surname)
+                @Html.TextBoxFor(m => m.Surname, new { @class = "form-control", placeholder = "Surname" })
+                @Html.ValidationMessageFor(m => m.Surname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+                @Html.LabelFor(m => m.Birthday)
+                @Html.TextBoxFor(m => m.Birthday, new { @class = "form-control", placeholder = "Surname" })
+                @Html.ValidationMessageFor(m => m.Birthday, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-md-6">
+               @Html.CheckBoxFor(m=>m.isAdmin, new {@class = "form-check-input"})
+               @Html.LabelFor(m=>m.isAdmin)
+               @Html.ValidationMessageFor(m=>m.isAdmin)
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    }
+</div>

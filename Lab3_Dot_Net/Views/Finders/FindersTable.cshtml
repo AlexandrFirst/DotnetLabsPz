@@ -1,0 +1,44 @@
+﻿@using Lab3_Dot_Net.Core.Domain.Finders;
+@model IEnumerable<FinderAudit>
+
+@{
+    ViewBag.Title = "FindersTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="m-6 container">
+    <h2 class="text-center">Finders</h2>
+    @Html.Partial("Alert")
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Birthday</th>
+                <th>Added on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var finder in Model)
+            {
+                <tr>
+                    <td>@finder.Name</td>
+                    <td>@finder.Surname</td>
+                    <td>@finder.Birthday</td>
+                    <td>@finder.Made_At</td>
+                    <td>
+                        <a href="Finders/Edit/?id=@finder.FinderId" class="btn btn-primary btn-sm bg-success" tabindex="-1" role="button">Edit</a>
+                        <button onclick="openModal(this)" class="btn btn-primary btn-sm bg-danger" data-id="@finder.FinderId"
+                                data-name="@finder.Name" data-surname="@finder.Surname">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="m-4">
+    <a href="Finders/Edit" class="btn btn-primary">Create new finder</a>
+</div>
+<script src="~/Content/JS/Finders/FinderModal.js"></script>

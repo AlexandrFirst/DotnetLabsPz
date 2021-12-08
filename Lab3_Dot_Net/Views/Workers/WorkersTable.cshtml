@@ -1,0 +1,57 @@
+﻿@using Lab3_Dot_Net.Core.Domain.Workers;
+@model IEnumerable<WorkerAudit>
+
+@{
+    ViewBag.Title = "WorkersTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="m-6 container">
+    <h2 class="text-center">Workers</h2>
+    @Html.Partial("Alert", Model)
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Login</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Birthday</th>
+                <th>Added on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var worker in Model)
+            {
+                <tr>
+                    <td>@worker.Login</td>
+                    <td>@worker.Name</td>
+                    <td>@worker.Surname</td>
+                    <td>@worker.Birthday</td>
+                    <td>@worker.Made_At</td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <td>
+                            <a href="Workers/Edit/?id=@worker.WorkerId" class="btn btn-primary btn-sm bg-success" tabindex="-1" role="button">Edit</a>
+                            <button onclick="openModal(this)" class="btn btn-primary btn-sm bg-danger" data-id="@worker.WorkerId"
+                                    data-name="@worker.Name" data-surname="@worker.Surname">
+                                Delete
+                            </button>
+                        </td>
+                    }
+                    else if (User.Identity.Name == worker.Login)
+                    {
+                        <td>
+                            <a href="Workers/Edit/?id=@worker.WorkerId" class="btn btn-primary btn-sm bg-success" tabindex="-1" role="button">Edit</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@if (User.IsInRole("Admin"))
+{
+    <div class="m-4">
+        <a href="Workers/Edit" class="btn btn-primary">Create new worker</a>
+    </div>
+}
+<script src="~/Content/JS/Workers/WorkerModal.js"></script>

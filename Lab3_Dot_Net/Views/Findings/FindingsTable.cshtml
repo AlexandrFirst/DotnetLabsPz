@@ -1,0 +1,44 @@
+﻿@using Lab3_Dot_Net.Core.Domain.Findings;
+
+@model IEnumerable<FindingAudit>
+
+@{
+    ViewBag.Title = "FindingsTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="m-6 container">
+    <h2 class="text-center">Findings</h2>
+    @Html.Partial("Alert")
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Added on</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var finding in Model)
+            {
+                <tr>
+                    <td>@finding.FindingName</td>
+                    <td>@finding.Description</td>
+                    <td>@finding.Made_At</td>
+                    <td>
+                        <a href="Findings/Edit/?id=@finding.FindingId" class="btn btn-primary btn-sm bg-success" tabindex="-1" role="button">Edit</a>
+                        <button onclick="openModal(this)" class="btn btn-primary btn-sm bg-danger" data-id="@finding.FindingId"
+                                data-name="@finding.FindingName">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="m-4">
+    <a href="Findings/Edit" class="btn btn-primary">Create new finding</a>
+</div>
+<script src="~/Content/JS/Findings/FindingModal.js"></script>
